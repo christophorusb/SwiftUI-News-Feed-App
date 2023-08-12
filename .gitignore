@@ -1,0 +1,73 @@
+# Xcode
+#
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+*.xccheckout
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.xcarchive
+
+# CocoaPods
+#
+# We recommend against adding the Pods directory to your .gitignore. 
+However
+# you should judge for yourself, the pros and cons are mentioned at:
+# 
+https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
+#
+# Pods/
+
+# Carthage
+#
+# Add this line if you want to avoid checking in source code from Carthage 
+dependencies.
+# Carthage/Checkouts
+
+Carthage/Build
+
+# Swift Package Manager
+#
+# The .build directory is used by SwiftPM as a build/cache directory, but 
+it's normally not needed to be versioned. 
+.build/
+
+# Add this line if you want to avoid checking in Swift Package binaries 
+(i.e. .xcframework, .a).
+# swift-packages/
+
+# macOS
+#
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Various settings (e.g. Finder's .DS_Store files, Apple's .AppleDouble 
+files and .LSOverride, etc)
+Icon
+._*
+
+# Thumbnails
+._.DS_Store
+*.DS_Store
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
