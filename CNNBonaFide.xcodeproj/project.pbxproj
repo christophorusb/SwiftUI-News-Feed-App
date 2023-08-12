@@ -13,9 +13,14 @@
 		5DFDF25B2A87623700B7A1AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DFDF25A2A87623700B7A1AB /* Assets.xcassets */; };
 		5DFDF25E2A87623700B7A1AB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DFDF25D2A87623700B7A1AB /* Preview Assets.xcassets */; };
 		5DFDF2682A8762F000B7A1AB /* NewsItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFDF2672A8762F000B7A1AB /* NewsItemService.swift */; };
-		5DFDF26A2A87675300B7A1AB /* APIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFDF2692A87675300B7A1AB /* APIServices.swift */; };
+		5DFDF26A2A87675300B7A1AB /* NewsAPIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFDF2692A87675300B7A1AB /* NewsAPIServices.swift */; };
 		5DFDF26D2A876C4D00B7A1AB /* NewsResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFDF26C2A876C4D00B7A1AB /* NewsResponseModel.swift */; };
 		5DFDF2702A877CD900B7A1AB /* MyNavigationStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFDF26F2A877CD900B7A1AB /* MyNavigationStack.swift */; };
+		5DFDF2732A87ABA600B7A1AB /* TopNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFDF2722A87ABA600B7A1AB /* TopNavBar.swift */; };
+		5DFDF2752A87C01100B7A1AB /* FillImageCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFDF2742A87C01100B7A1AB /* FillImageCardView.swift */; };
+		5DFDF27B2A87DB9900B7A1AB /* ImageAPIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFDF27A2A87DB9900B7A1AB /* ImageAPIServices.swift */; };
+		5DFDF27D2A87DCFF00B7A1AB /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFDF27C2A87DCFF00B7A1AB /* ImageService.swift */; };
+		5DFDF27F2A87E28200B7A1AB /* SkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFDF27E2A87E28200B7A1AB /* SkeletonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,9 +32,15 @@
 		5DFDF25A2A87623700B7A1AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5DFDF25D2A87623700B7A1AB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5DFDF2672A8762F000B7A1AB /* NewsItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsItemService.swift; sourceTree = "<group>"; };
-		5DFDF2692A87675300B7A1AB /* APIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIServices.swift; sourceTree = "<group>"; };
+		5DFDF2692A87675300B7A1AB /* NewsAPIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsAPIServices.swift; sourceTree = "<group>"; };
 		5DFDF26C2A876C4D00B7A1AB /* NewsResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsResponseModel.swift; sourceTree = "<group>"; };
 		5DFDF26F2A877CD900B7A1AB /* MyNavigationStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyNavigationStack.swift; sourceTree = "<group>"; };
+		5DFDF2712A87A22200B7A1AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		5DFDF2722A87ABA600B7A1AB /* TopNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNavBar.swift; sourceTree = "<group>"; };
+		5DFDF2742A87C01100B7A1AB /* FillImageCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillImageCardView.swift; sourceTree = "<group>"; };
+		5DFDF27A2A87DB9900B7A1AB /* ImageAPIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPIServices.swift; sourceTree = "<group>"; };
+		5DFDF27C2A87DCFF00B7A1AB /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		5DFDF27E2A87E28200B7A1AB /* SkeletonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonView.swift; sourceTree = "<group>"; };
 		DA47828BC8E38292BA40138B /* Pods-CNNBonaFide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNNBonaFide.debug.xcconfig"; path = "Target Support Files/Pods-CNNBonaFide/Pods-CNNBonaFide.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,6 +94,7 @@
 		5DFDF2552A87623500B7A1AB /* CNNBonaFide */ = {
 			isa = PBXGroup;
 			children = (
+				5DFDF2712A87A22200B7A1AB /* Info.plist */,
 				5DFDF26E2A877CB100B7A1AB /* Components */,
 				5DFDF26B2A876C3600B7A1AB /* Models */,
 				5DFDF2642A87627100B7A1AB /* Services */,
@@ -105,8 +117,8 @@
 		5DFDF2642A87627100B7A1AB /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				5DFDF2672A8762F000B7A1AB /* NewsItemService.swift */,
-				5DFDF2692A87675300B7A1AB /* APIServices.swift */,
+				5DFDF2792A87DA3F00B7A1AB /* Image */,
+				5DFDF2782A87DA2A00B7A1AB /* News */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -123,8 +135,29 @@
 			isa = PBXGroup;
 			children = (
 				5DFDF26F2A877CD900B7A1AB /* MyNavigationStack.swift */,
+				5DFDF2722A87ABA600B7A1AB /* TopNavBar.swift */,
+				5DFDF2742A87C01100B7A1AB /* FillImageCardView.swift */,
+				5DFDF27E2A87E28200B7A1AB /* SkeletonView.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		5DFDF2782A87DA2A00B7A1AB /* News */ = {
+			isa = PBXGroup;
+			children = (
+				5DFDF2672A8762F000B7A1AB /* NewsItemService.swift */,
+				5DFDF2692A87675300B7A1AB /* NewsAPIServices.swift */,
+			);
+			path = News;
+			sourceTree = "<group>";
+		};
+		5DFDF2792A87DA3F00B7A1AB /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				5DFDF27A2A87DB9900B7A1AB /* ImageAPIServices.swift */,
+				5DFDF27C2A87DCFF00B7A1AB /* ImageService.swift */,
+			);
+			path = Image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,10 +275,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				5DFDF2682A8762F000B7A1AB /* NewsItemService.swift in Sources */,
+				5DFDF2752A87C01100B7A1AB /* FillImageCardView.swift in Sources */,
 				5DFDF2592A87623500B7A1AB /* ContentView.swift in Sources */,
+				5DFDF27D2A87DCFF00B7A1AB /* ImageService.swift in Sources */,
 				5DFDF2702A877CD900B7A1AB /* MyNavigationStack.swift in Sources */,
-				5DFDF26A2A87675300B7A1AB /* APIServices.swift in Sources */,
+				5DFDF27F2A87E28200B7A1AB /* SkeletonView.swift in Sources */,
+				5DFDF26A2A87675300B7A1AB /* NewsAPIServices.swift in Sources */,
 				5DFDF26D2A876C4D00B7A1AB /* NewsResponseModel.swift in Sources */,
+				5DFDF27B2A87DB9900B7A1AB /* ImageAPIServices.swift in Sources */,
+				5DFDF2732A87ABA600B7A1AB /* TopNavBar.swift in Sources */,
 				5DFDF2572A87623500B7A1AB /* CNNBonaFideApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,9 +416,11 @@
 				DEVELOPMENT_ASSET_PATHS = "\"CNNBonaFide/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CNNBonaFide/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -407,9 +447,11 @@
 				DEVELOPMENT_ASSET_PATHS = "\"CNNBonaFide/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = CNNBonaFide/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

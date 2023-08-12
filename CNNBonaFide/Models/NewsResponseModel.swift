@@ -15,6 +15,9 @@ struct NewsResponseModel: Codable {
 
 struct NewsItemModel: Identifiable, Codable {
     var id: UUID = UUID() // Generating a unique UUID since the provided JSON does not have a specific 'id' field.
+    var categoryFlag: Int {
+        return abs(title.hashValue) % 4 + 1
+    } // Randomize a number to determine news category
     var title: String
     var link: URL
     var contentSnippet: String

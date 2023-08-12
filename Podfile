@@ -6,6 +6,6 @@ target 'CNNBonaFide' do
   use_frameworks!
 
   # Pods for CNNBonaFide
-  pod 'Moya', '~> 15.0'
+  pod 'Moya/Combine', '~> 15.0'
 
 end

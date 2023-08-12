@@ -13,9 +13,9 @@ class NewsItemService: ObservableObject {
     @Published var isLoading: Bool = false
     @Published var error: Error? = nil
   
-    private var provider: MoyaProvider<NewsAPI> = {
+    private var provider: MoyaProvider<NewsAPIServices> = {
         let logger = NetworkLoggerPlugin(configuration: .init(logOptions: [.errorResponseBody, .requestBody, .requestHeaders]))
-        return MoyaProvider<NewsAPI>(plugins: [logger])
+        return MoyaProvider<NewsAPIServices>(plugins: [logger])
     }()
 
     func getAll() {

@@ -7,22 +7,22 @@
 
 import Moya
 
-enum NewsAPI {
+enum NewsAPIServices {
     case getAllNews
 }
 
-extension NewsAPI: TargetType {
+extension NewsAPIServices: TargetType {
     var baseURL: URL {
         return URL(string: "https://berita-indo-api-next.vercel.app/api/")!
     }
-
+    
     var path: String {
         switch self {
         case .getAllNews:
             return "/cnn-news"
         }
     }
-
+    
     var method: Moya.Method {
         switch self {
         case .getAllNews:

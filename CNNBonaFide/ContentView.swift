@@ -10,31 +10,59 @@ import SwiftUI
 struct ContentView: View {
     
     @StateObject private var newsItemService = NewsItemService()
-    
+        
     var body: some View {
+        
         MyNavigationStack {
-            List(newsItemService.newsResponse?.data ?? []) { item in
-                Text(item.title)
-            }
-            .onAppear {
-                if newsItemService.newsResponse?.data.isEmpty ?? true{
-                    newsItemService.getAll()
+            
+            ZStack{
+                Color("PrimaryBG").edgesIgnoringSafeArea(.all)
+                // Main content
+                VStack {
+                    VStack {
+                        if let mainJumbotron = newsItemService.newsResponse?.data.first {
+                            FillImageCardView(item: mainJumbotron)
+                        }
+                    }
+                    .padding()
                 }
+                
+                // Top Nav
+                TopNavBar()
+                
             }
-            .overlay(Group {
-                if newsItemService.isLoading {
-                    ProgressView() // Show a loading indicator
-                }
-            })
         }
-        VStack{
-            Text("ADASDASDASDASD")
+        .onAppear{
+            if newsItemService.newsResponse?.data.isEmpty ?? true {
+                newsItemService.getAll()
+            }
         }
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
 }
+
+
+
+//                List(newsItemService.newsResponse?.data ?? []) { item in
+//                    VStack (alignment: .leading){
+//                        Text(item.title)
+//                        Text(item.id.uuidString)
+//                        Text(item.categoryFlag.formatted())
+//                    }
+//                }
+//                .onAppear {
+//                    if newsItemService.newsResponse?.data.isEmpty ?? true {
+//                        newsItemService.getAll()
+//                    }
+//                }
+//                .overlay(Group {
+//                    if newsItemService.isLoading {
+//                        ProgressView() // Show a loading indicator
+//                    }
+//                })
