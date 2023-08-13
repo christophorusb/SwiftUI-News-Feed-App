@@ -18,47 +18,43 @@ struct ContentView: View {
                 Color("PrimaryBG").edgesIgnoringSafeArea(.all)
                 
                 // Main content
-                // Super Wrapper
-                VStack (alignment: .leading, spacing: 20){
-                    // Main Jumbotron
-                    if let mainJumbotron = newsItemService.newsResponse?.data.first {
-                        FillImageCardView(item: mainJumbotron)
-                    }
-                    
-                    // Divider Horizontal Border
-                    Divider()
-                        .background(Color.gray.opacity(0.2))
-                    
-                    // Top Stories Wrapper
-                    VStack {
-                        HStack {
-                            Text("Top Stories")
-                                .bold()
-                                .font(.title2)
-                            Spacer()
-                            Text("See all")
-                            
+                ScrollView{
+                    // Super Wrapper
+                    VStack (alignment: .leading, spacing: 20){
+                        // Main Jumbotron
+                        if let mainJumbotron = newsItemService.newsResponse?.data.first {
+                            FillImageCardView(item: mainJumbotron)
                         }
-                        .foregroundColor(Color.white)
                         
-                        //Horizontal Card
+                        // Divider Horizontal Border
+                        Divider()
+                            .background(Color.gray.opacity(0.2))
+                        
+                        // Top Stories Wrapper
                         VStack {
                             HStack {
+                                Text("Top Stories")
+                                    .bold()
+                                    .font(.title2)
+                                Spacer()
+                                Text("See all")
                                 
                             }
+                            .foregroundColor(Color.white)
                             
-                            HStack {
-                                
+                            //Horizontal Card
+      
+                            ForEach(newsItemService.newsResponse?.data.prefix(10) ?? [], id: \.id) { newsItem in
+                                NewsCard(news: newsItem)
                             }
                         }
                     }
+                    .padding()
                 }
-                .padding()
+              
 
-                
                 // Top Nav
                 TopNavBar()
-                
             }
         }
         .onAppear{

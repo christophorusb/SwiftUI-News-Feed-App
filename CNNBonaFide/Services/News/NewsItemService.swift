@@ -45,3 +45,33 @@ class NewsItemService: ObservableObject {
         }
     }
 }
+
+struct NewsItemHelper {
+    static func getSampleNewsItemData() -> NewsItemModel {
+        var sampleObject: NewsItemModel!
+        let JSONstring =
+        """
+        {
+            "title": "FOTO: Penampakan Chery Omoda 5  EV di GIIAS 2023",
+            "link": "https://www.cnnindonesia.com/otomotif/20230812111934-605-985219/foto-penampakan-chery-omoda-5-ev-di-giias-2023",
+            "contentSnippet": "Chery meramaikan Gaikindo Indonesia International Auto Show (GIIAS) 2023 dengan memperkenalkan mobil listrik Omoda 5 EV.",
+            "isoDate": "2023-08-12T05:16:30.000Z",
+            "image": {
+                "small": "https://akcdn.detik.net.id/visual/2023/08/11/mobil-chery-omoda-ev-5_169.jpeg?w=360&q=90",
+                "large": "https://akcdn.detik.net.id/visual/2023/08/11/mobil-chery-omoda-ev-5_169.jpeg?w=360&q=100"
+            }
+        }
+        """
+        
+        if let jsonData = JSONstring.data(using: .utf8) {
+            let decoder = JSONDecoder()
+            do {
+                sampleObject = try decoder.decode(NewsItemModel.self, from: jsonData)
+            } catch {
+                print("Error decoding JSON: \(error)")
+            }
+        }
+        
+        return sampleObject
+    }
+}
