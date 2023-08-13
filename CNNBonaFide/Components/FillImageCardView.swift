@@ -15,45 +15,25 @@ struct FillImageCardView: View {
             // Handle the image loading here, possibly with another conditional or default image.
             
             ImageView(url: item.image.large.formatted())
-            
-            VStack(alignment: .leading, spacing: 4) {
+ 
+            VStack(alignment: .leading) {
+                Text(item.isoDate.formatted())
+                    .font(.footnote)
+                    .padding(EdgeInsets(top: 10, leading: 8, bottom: 0, trailing: 0))
+                    .foregroundColor(.white)
+                
                 Text(item.title)
                     .font(.headline)
                     .foregroundColor(.white)
                     .shadow(radius: 2)
-                
-                Text(item.contentSnippet)
-                    .font(.subheadline)
-                    .foregroundColor(.white)
-                    .shadow(radius: 2)
+                    .padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 5))
+                    .bold(true)
             }
+            .frame(maxWidth: .infinity)
             .background(Color("VerticalCardBG"))
-            .padding()
         }
     }
 }
-
-struct ImageView: View {
-    let url: String
-    var body: some View {
-        AsyncImage(url: URL(string: "\(url)")) { phase in
-            if let image = phase.image {
-                image
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-            }
-            else if phase.error != nil {
-                
-            }
-            else {
-                Image(systemName: "photo") // 4
-                   .resizable()
-                   .aspectRatio(contentMode: .fill)
-            }
-        } 
-    }
-}
-
 
 //struct FillImageCardView_Previews: PreviewProvider {
 //    let dateFormatter = DateFormatter()

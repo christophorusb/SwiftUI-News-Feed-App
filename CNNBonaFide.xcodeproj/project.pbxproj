@@ -21,6 +21,7 @@
 		5DFDF27B2A87DB9900B7A1AB /* ImageAPIServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFDF27A2A87DB9900B7A1AB /* ImageAPIServices.swift */; };
 		5DFDF27D2A87DCFF00B7A1AB /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFDF27C2A87DCFF00B7A1AB /* ImageService.swift */; };
 		5DFDF27F2A87E28200B7A1AB /* SkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFDF27E2A87E28200B7A1AB /* SkeletonView.swift */; };
+		5DFDF2812A887C1E00B7A1AB /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFDF2802A887C1E00B7A1AB /* ImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		5DFDF27A2A87DB9900B7A1AB /* ImageAPIServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPIServices.swift; sourceTree = "<group>"; };
 		5DFDF27C2A87DCFF00B7A1AB /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		5DFDF27E2A87E28200B7A1AB /* SkeletonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonView.swift; sourceTree = "<group>"; };
+		5DFDF2802A887C1E00B7A1AB /* ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 		DA47828BC8E38292BA40138B /* Pods-CNNBonaFide.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CNNBonaFide.debug.xcconfig"; path = "Target Support Files/Pods-CNNBonaFide/Pods-CNNBonaFide.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,6 +140,7 @@
 				5DFDF2722A87ABA600B7A1AB /* TopNavBar.swift */,
 				5DFDF2742A87C01100B7A1AB /* FillImageCardView.swift */,
 				5DFDF27E2A87E28200B7A1AB /* SkeletonView.swift */,
+				5DFDF2802A887C1E00B7A1AB /* ImageView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DFDF2812A887C1E00B7A1AB /* ImageView.swift in Sources */,
 				5DFDF2682A8762F000B7A1AB /* NewsItemService.swift in Sources */,
 				5DFDF2752A87C01100B7A1AB /* FillImageCardView.swift in Sources */,
 				5DFDF2592A87623500B7A1AB /* ContentView.swift in Sources */,

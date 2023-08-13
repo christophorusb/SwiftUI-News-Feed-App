@@ -14,18 +14,47 @@ struct ContentView: View {
     var body: some View {
         
         MyNavigationStack {
-            
             ZStack{
                 Color("PrimaryBG").edgesIgnoringSafeArea(.all)
+                
                 // Main content
-                VStack {
+                // Super Wrapper
+                VStack (alignment: .leading, spacing: 20){
+                    // Main Jumbotron
+                    if let mainJumbotron = newsItemService.newsResponse?.data.first {
+                        FillImageCardView(item: mainJumbotron)
+                    }
+                    
+                    // Divider Horizontal Border
+                    Divider()
+                        .background(Color.gray.opacity(0.2))
+                    
+                    // Top Stories Wrapper
                     VStack {
-                        if let mainJumbotron = newsItemService.newsResponse?.data.first {
-                            FillImageCardView(item: mainJumbotron)
+                        HStack {
+                            Text("Top Stories")
+                                .bold()
+                                .font(.title2)
+                            Spacer()
+                            Text("See all")
+                            
+                        }
+                        .foregroundColor(Color.white)
+                        
+                        //Horizontal Card
+                        VStack {
+                            HStack {
+                                
+                            }
+                            
+                            HStack {
+                                
+                            }
                         }
                     }
-                    .padding()
                 }
+                .padding()
+
                 
                 // Top Nav
                 TopNavBar()

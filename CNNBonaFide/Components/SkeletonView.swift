@@ -11,7 +11,7 @@ struct SkeletonView: View {
     var body: some View {
         Rectangle()
             .fill(Color.gray.opacity(0.2))
-            .frame(height: 40)
+            .frame(height: 180)
             .cornerRadius(5)
             .modifier(ShimmerModifier(animationDuration: 1.5))
     }
@@ -39,6 +39,7 @@ struct ShimmerModifier: ViewModifier {
                 )
                 .mask(content)
         )
+        .clipped()
         .onAppear() {
             withAnimation(Animation.linear(duration: self.animationDuration).repeatForever(autoreverses: false)) {
                 self.gradientStart = UnitPoint(x: 1.5, y: 0.2)
