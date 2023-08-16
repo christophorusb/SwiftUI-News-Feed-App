@@ -99,11 +99,12 @@ struct TopNavBar: View {
                                                        startPoint: .top,
                                                        endPoint: .bottom)
                                             .frame(height: 6)
-                                            .offset(y: 18) // Adjust this value based on your padding and font size
+                                            .offset(y: 18)
                                     )
                             }
                         }
                         .padding(.top, 5)
+                        
                     }
                     .padding(.top, geometry.safeAreaInsets.top + 70)  // Add padding equal to the top safe area inset
                     .foregroundColor(Color.white)

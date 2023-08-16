@@ -4,19 +4,23 @@ PODS:
     - Moya/Core
   - Moya/Core (15.0.0):
     - Alamofire (~> 5.0)
+  - WrappingHStack (2.2.10)
 
 DEPENDENCIES:
   - Moya/Combine (~> 15.0)
+  - WrappingHStack
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - Moya
+    - WrappingHStack
 
 SPEC CHECKSUMS:
   Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
+  WrappingHStack: f784737f5707f8fea91b687074530dbefd2dbf05
 
-PODFILE CHECKSUM: 03c07dd5bcb71c8a82c47d5f4b0310e48075107d
+PODFILE CHECKSUM: 10a9919127958a9c72ce2f8be3b339168a318844
 
 COCOAPODS: 1.12.1

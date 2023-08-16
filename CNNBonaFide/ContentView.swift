@@ -6,62 +6,25 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct ContentView: View {
-    
-    @StateObject private var newsItemService = NewsItemService()
-        
     var body: some View {
-        
-        MyNavigationStack {
-            ZStack{
-                Color("PrimaryBG").edgesIgnoringSafeArea(.all)
-                
-                // Main content
-                ScrollView{
-                    // Super Wrapper
-                    VStack (alignment: .leading, spacing: 20){
-                        // Main Jumbotron
-                        if let mainJumbotron = newsItemService.newsResponse?.data.first {
-                            FillImageCardView(item: mainJumbotron)
-                        }
-                        
-                        // Divider Horizontal Border
-                        Divider()
-                            .background(Color.gray.opacity(0.2))
-                        
-                        // Top Stories Wrapper
-                        VStack {
-                            HStack {
-                                Text("Top Stories")
-                                    .bold()
-                                    .font(.title2)
-                                Spacer()
-                                Text("See all")
-                                
-                            }
-                            .foregroundColor(Color.white)
-                            
-                            //Horizontal Card
-      
-                            ForEach(newsItemService.newsResponse?.data.prefix(10) ?? [], id: \.id) { newsItem in
-                                NewsCard(news: newsItem)
-                            }
-                        }
-                    }
-                    .padding()
+        TabView {
+            NewsFeedView()
+                .tabItem{
+                    Label("Feed", systemImage: "doc.plaintext")
                 }
-              
-
-                // Top Nav
-                TopNavBar()
-            }
+            NewsExploreView()
+                .tabItem {
+                    Label("Explore", systemImage: "safari.fill")
+                }
         }
-        .onAppear{
-            if newsItemService.newsResponse?.data.isEmpty ?? true {
-                newsItemService.getAll()
-            }
+        .onAppear() {
+            UITabBar.appearance().isTranslucent = true
+            UITabBar.appearance().barTintColor = UIColor(Color.black.opacity(0.2)).withAlphaComponent(1)
         }
+        .accentColor(.white)
     }
 }
 
@@ -71,23 +34,3 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-
-
-
-//                List(newsItemService.newsResponse?.data ?? []) { item in
-//                    VStack (alignment: .leading){
-//                        Text(item.title)
-//                        Text(item.id.uuidString)
-//                        Text(item.categoryFlag.formatted())
-//                    }
-//                }
-//                .onAppear {
-//                    if newsItemService.newsResponse?.data.isEmpty ?? true {
-//                        newsItemService.getAll()
-//                    }
-//                }
-//                .overlay(Group {
-//                    if newsItemService.isLoading {
-//                        ProgressView() // Show a loading indicator
-//                    }
-//                })

@@ -1,5 +1,5 @@
 //
-//  NewsCard.swift
+//  HorizontalNewsCard.swift
 //  CNNBonaFide
 //
 //  Created by laptop MCO on 13/08/23.
@@ -7,36 +7,35 @@
 
 import SwiftUI
 
-struct NewsCard: View {
+struct HorizontalNewsCard: View {
     
-    let news: NewsItemModel
+    let newsItem: NewsItemModel
     
     var body: some View {
         VStack {
-            HStack {
-                ResizableImageView(url: news.image.large.formatted(), width: 80, height: 62)
+            HStack(spacing: 12) {
+                ResizableImageView(url: newsItem.image.large.formatted(), width: 80, height: 62)
                 
-                VStack(alignment: .leading) {
+                VStack(alignment: .leading, spacing: 12) {
                     Text("CNN Indonesia")
                         .font(.footnote)
                         .foregroundColor(Color.gray)
-                        
-                    Spacer()
                     
-                    Text(news.title)
+                    Text(newsItem.title)
+                        .multilineTextAlignment(.leading)
                         .lineLimit(2)
                         .truncationMode(.tail)
                         .foregroundColor(.white)
-                        .bold(true)
+                        .bold()
                 }
             }
             .padding()
             
             HStack {
-                Text(news.isoDate.formatted(date: .abbreviated, time: .omitted))
+                Text(newsItem.isoDate.formatted(date: .abbreviated, time: .omitted))
                     .font(.footnote)
                 +
-                Text(" • \(news.timeToRead) min read")
+                Text(" • \(newsItem.timeToRead) min read")
                     .font(.footnote)
                 
                 Spacer()
@@ -61,9 +60,10 @@ struct NewsCard: View {
     }
 }
 
-struct NewsCard_Previews: PreviewProvider {
+struct HorizontalNewsCard_Previews: PreviewProvider {
     
     static var previews: some View {
-        NewsCard(news: NewsItemModel())
+        HorizontalNewsCard(newsItem: NewsItemModel())
     }
 }
+
