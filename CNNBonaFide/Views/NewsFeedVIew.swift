@@ -2,86 +2,123 @@
 //  NewsFeedVIew.swift
 //  CNNBonaFide
 //
-//  Created by laptop MCO on 15/08/23.
+//  Created by Christophorus Beneditto Aditya Satrio on 15/08/23.
 //
 
 import SwiftUI
+import Combine
 
 struct NewsFeedView: View {
     
     @StateObject private var newsViewModel = NewsViewModel()
+    @StateObject var navigationViewModel = NavigationViewModel()
     @State private var currentJumbotronSelection: Int = 0
+    
+    func checkIsStillPreviousContent(currentContent: NavigationViewModel.FeedContentToBeRendered) -> Bool{
+        if currentContent == navigationViewModel.previousRenderedContent {
+            return true
+        }
+        
+        navigationViewModel.previousRenderedContent = currentContent
+        return false
+    }
     
     var body: some View {
         MyNavigationStack {
             ZStack{
                 Color("PrimaryBG").edgesIgnoringSafeArea(.all)
                 
-                // Main content
-                ScrollView{
-                    // Super Wrapper
-                    VStack (alignment: .leading, spacing: 20){
-                        // Main Jumbotron
-                        TabView {
-                            ForEach(newsViewModel.newsResponse?.data.shuffled().prefix(4) ?? [], id: \.id) {
-                                newsItem in
-                                NavigationLink {
-                                    NewsDetailView(newsItemDetail: newsItem)
-                                } label: {
-                                    FillImageCardView(item: newsItem)
-                                }
-                            }
-                        }
-                        .tabViewStyle(.page)
-                        .frame(minHeight: 272)
-                        
-
-                        // Divider Horizontal Border
-                        Divider()
-                            .background(Color.gray.opacity(0.2))
-                        
-                        // Top Stories Wrapper
-                        VStack {
-                            HStack {
-                                Text("Top Stories")
-                                    .bold()
-                                    .font(.title2)
-                                Spacer()
-                                Text("See all")
-                                
-                            }
-                            .foregroundColor(Color.white)
-                            
-                            //News Card
-                            ForEach(newsViewModel.newsResponse?.data.prefix(10) ?? [], id: \.id) { newsItem in
-                                NavigationLink {
-                                    NewsDetailView(newsItemDetail: newsItem)
-                                } label: {
-                                    HorizontalNewsCard(newsItem: newsItem)
-                                }
-
-                            }
-                        }
-                    }
-                    .padding()
+                if newsViewModel.isLoading == true {
+                    LoadingSpinner(scaleMultiplier: 1.7, isIncludeText: true)
                 }
-                .padding(.top, 142)
-              
-
+                else {
+                    // Main content
+                    ScrollView{
+                        FeedContentView(newsResponseModel: newsViewModel.newsResponse)
+                    }
+                    .refreshable{
+                        newsViewModel.getAll()
+                    }
+                    .padding(.top, 122)
+                }
                 // Top Nav
-                TopNavBar()
+                TopNavBar(navigationViewModelInstance: navigationViewModel)
             }
         }
-        .onAppear{
-            if newsViewModel.newsResponse?.data.isEmpty ?? true {
-                newsViewModel.getAll()
+        .onReceive(navigationViewModel.$selectedContentTobeRendered) { val in
+            print("TRIGGERED: \(val)")
+            
+            switch val {
+            case .tech:
+                print("Rendering Tech Content")
+                
+                let isStillPreviousContent = checkIsStillPreviousContent(currentContent: val)
+                print("Is still the same content? \(isStillPreviousContent)")
+                
+                if isStillPreviousContent == false {
+                    newsViewModel.getAll(byCategory: "TECHNOLOGY")
+                }
+                
+            case .economy:
+                print("Rendering Economy Content")
+                
+                let isStillPreviousContent = checkIsStillPreviousContent(currentContent: val)
+                print("Is still the same content? \(isStillPreviousContent)")
+                
+                if isStillPreviousContent == false {
+                    newsViewModel.getAll(byCategory: "ECONOMY")
+                }
+                
+            case .international:
+                print("Rendering International Content")
+                
+                let isStillPreviousContent = checkIsStillPreviousContent(currentContent: val)
+                print("Is still the same content? \(isStillPreviousContent)")
+                
+                if isStillPreviousContent == false {
+                    newsViewModel.getAll(byCategory: "INTERNATIONAL")
+                }
+
+            case .entertainment:
+                print("Rendering Entertainment Content")
+                
+                let isStillPreviousContent = checkIsStillPreviousContent(currentContent: val)
+                print("Is still the same content? \(isStillPreviousContent)")
+                
+                if isStillPreviousContent == false {
+                    newsViewModel.getAll(byCategory: "ENTERTAINMENT")
+                }
+               
+            default:
+                print("Rendering Nothing")
+                break
             }
         }
     }
 }
 
-struct NewsFeedVIew_Previews: PreviewProvider {
+struct NewsFeedView_Previews: PreviewProvider {
     static var previews: some View {
         NewsFeedView()
     }
 }
+
+//    .onReceive(navigationViewModel.$contentToBeRendered.removeDuplicates()) { newVal in
+//        switch newVal {
+//        case .tech:
+//            print("Rendering Tech Content")
+//            //newsViewModel.getAll(byCategory: "TECHNOLOGY")
+//        case .economy:
+//            print("Rendering Economy Content")
+//            //newsViewModel.getAll(byCategory: "ECONOMY")
+//        case .international:
+//            print("Rendering International Content")
+//            //newsViewModel.getAll(byCategory: "INTERNATIONAL")
+//        case .entertainment:
+//            print("Rendering Entertainment Content")
+//            //newsViewModel.getAll(byCategory: "ENTERTAINMENT")
+//        default:
+//            print("Rendering Nothing")
+//            break
+//        }
+//    }

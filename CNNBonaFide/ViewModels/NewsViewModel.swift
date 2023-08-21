@@ -2,7 +2,7 @@
 //  NewsViewModel.swift
 //  CNNBonaFide
 //
-//  Created by laptop MCO on 15/08/23.
+//  Created by Christophorus Beneditto Aditya Satrio on 15/08/23.
 //
 
 import Foundation

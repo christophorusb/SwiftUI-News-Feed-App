@@ -2,7 +2,7 @@
 //  ResizableImageView.swift
 //  CNNBonaFide
 //
-//  Created by laptop MCO on 13/08/23.
+//  Created by Christophorus Beneditto Aditya Satrio on 13/08/23.
 //
 
 import SwiftUI

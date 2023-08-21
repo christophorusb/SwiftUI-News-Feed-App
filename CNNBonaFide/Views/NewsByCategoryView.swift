@@ -2,11 +2,10 @@
 //  NewsByCategoryView.swift
 //  CNNBonaFide
 //
-//  Created by laptop MCO on 15/08/23.
+//  Created by Christophorus Beneditto Aditya Satrio on 15/08/23.
 //
 
 import SwiftUI
-import WrappingHStack
 
 struct NewsByCategoryView: View {
     var category: String
@@ -32,6 +31,11 @@ struct NewsByCategoryView: View {
                 }
             }
             .navigationTitle("\(category.capitalized)")
+            .toolbarColorScheme(.dark, for: .navigationBar)
+            .toolbarBackground(
+                Color.black,
+                for: .navigationBar)
+            .toolbarBackground(.visible, for: .navigationBar)
             .onAppear {
                 if newsViewModel.newsResponse?.data.isEmpty ?? true {
                     newsViewModel.getAll(byCategory: category)

@@ -2,7 +2,7 @@
 //  VerticalNewsCard.swift
 //  CNNBonaFide
 //
-//  Created by laptop MCO on 14/08/23.
+//  Created by Christophorus Beneditto Aditya Satrio on 14/08/23.
 //
 
 import SwiftUI
@@ -51,7 +51,7 @@ struct VerticalNewsCard: View {
         .padding()
         .background(Color("VerticalCardBG"))
         .clipShape(RoundedRectangle(cornerRadius: 12))
-        .frame(width: 192, height: 240)
+        .frame(width: 162, height: 240)
     }
 }
 

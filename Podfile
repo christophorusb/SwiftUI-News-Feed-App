@@ -7,6 +7,5 @@ target 'CNNBonaFide' do
 
   # Pods for CNNBonaFide
   pod 'Moya/Combine', '~> 15.0'
-  pod 'WrappingHStack'
 
 end

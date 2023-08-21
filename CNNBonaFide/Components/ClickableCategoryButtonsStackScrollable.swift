@@ -2,7 +2,7 @@
 //  ClickableCategoryButtonScrollable.swift
 //  CNNBonaFide
 //
-//  Created by laptop MCO on 16/08/23.
+//  Created by Christophorus Beneditto Aditya Satrio on 16/08/23.
 //
 
 import SwiftUI
@@ -15,41 +15,36 @@ struct ClickableCategoryButtonsStackScrollable: View {
         ScrollView(.horizontal, showsIndicators: false) {
             HStack(spacing: 20) {
                 
-                Button(action: {
-                        navigationViewModel.navigateToTech = true
-                    }){
-                        CategoryNavButton(iconName: "bolt.horizontal.circle.fill", buttonText: "Technology") {
-                            navigationViewModel.navigateToTech = true
-                        }
-                    }.navigationDestination(isPresented: $navigationViewModel.navigateToTech, destination: { NewsByCategoryView(category: "Technology")
-                    })
+                NavigationalButton(
+                    isPresented: $navigationViewModel.navigateToTech,
+                    iconName: "bolt.horizontal.circle.fill",
+                    forView: NewsByCategoryView(category: "Technology"),
+                    buttonText: "Technology",
+                    action: {navigationViewModel.navigateToTech = true}
+                )
                 
-                Button(action: {
-                        navigationViewModel.navigateToEconomy = true
-                    }){
-                        CategoryNavButton(iconName: "bitcoinsign.circle.fill", buttonText: "Economy") {
-                            navigationViewModel.navigateToEconomy = true
-                        }
-                    }.navigationDestination(isPresented: $navigationViewModel.navigateToEconomy, destination: { NewsByCategoryView(category: "Economy")
-                    })
+                NavigationalButton(
+                    isPresented: $navigationViewModel.navigateToEconomy,
+                    iconName: "bitcoinsign.circle.fill",
+                    forView: NewsByCategoryView(category: "Economy"),
+                    buttonText: "Economy",
+                    action: { navigationViewModel.navigateToEconomy = true }
+                )
                 
-                Button(action: {
-                        navigationViewModel.navigateToInternational = true
-                    }){
-                        CategoryNavButton(iconName: "airplane", buttonText: "International") {
-                            navigationViewModel.navigateToInternational = true
-                        }
-                    }.navigationDestination(isPresented: $navigationViewModel.navigateToInternational, destination: { NewsByCategoryView(category: "International")
-                    })
+                NavigationalButton(
+                    isPresented: $navigationViewModel.navigateToInternational,
+                    iconName: "airplane",
+                    forView: NewsByCategoryView(category: "International"),
+                    buttonText: "International",
+                    action: { navigationViewModel.navigateToInternational = true}
+                )
                 
-                Button(action: {
-                        navigationViewModel.navigateToEntertainment = true
-                    }){
-                        CategoryNavButton(iconName: "aspectratio.fill", buttonText: "Entertainment") {
-                            navigationViewModel.navigateToEntertainment = true
-                        }
-                    }.navigationDestination(isPresented: $navigationViewModel.navigateToEntertainment, destination: { NewsByCategoryView(category: "Entertainment")
-                    })
+                NavigationalButton(
+                    isPresented: $navigationViewModel.navigateToEntertainment,
+                    iconName: "aspectratio.fill",forView: NewsByCategoryView(category: "Entertainment"),
+                    buttonText: "Entertainment",
+                    action: {navigationViewModel.navigateToEntertainment = true}
+                )
             }
             .padding(.bottom)
         }

@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  CNNBonaFide
 //
-//  Created by laptop MCO on 12/08/23.
+//  Created by Christophorus Beneditto Aditya Satrio on 12/08/23.
 //
 
 import SwiftUI

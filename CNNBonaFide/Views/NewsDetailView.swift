@@ -2,16 +2,18 @@
 //  NewsDetailView.swift
 //  CNNBonaFide
 //
-//  Created by laptop MCO on 13/08/23.
+//  Created by Christophorus Beneditto Aditya Satrio on 13/08/23.
 //
 
 import SwiftUI
 
 struct NewsDetailView: View {
+    
     let newsItemDetail: NewsItemModel
     var body: some View {
         ZStack {
             Color("PrimaryBG").edgesIgnoringSafeArea(.all)
+            
             VStack {
                 ImageView(url: newsItemDetail.image.large.formatted())
                 
@@ -46,11 +48,13 @@ struct NewsDetailView: View {
                             .frame(width: 25, height: 25)
                             .foregroundColor(Color("IconMain"))
                         
-                        Image("Frame")
-                            .resizable()
-                            .renderingMode(.template)
-                            .frame(width: 25, height: 25)
-                            .foregroundColor(Color("IconMain"))
+                        Link(destination: newsItemDetail.link) {
+                            Image("Frame")
+                                .resizable()
+                                .renderingMode(.template)
+                                .frame(width: 25, height: 25)
+                                .foregroundColor(Color("IconMain"))
+                        }
 
                     }
                     

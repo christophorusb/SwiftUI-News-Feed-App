@@ -2,7 +2,7 @@
 //  NewsItemModel.swift
 //  CNNBonaFide
 //
-//  Created by laptop MCO on 12/08/23.
+//  Created by Christophorus Beneditto Aditya Satrio on 12/08/23.
 //
 
 import Foundation
@@ -39,6 +39,16 @@ struct NewsItemModel: Identifiable, Codable {
             contentSnippet = "Gerindra, PKB, Golkar, dan PAN telah resmi menandatangani kerja sama politik pada Minggu (13/8) untuk mengusung Prabowo sebagai capres 2024."
             isoDate = Date()
             image = ImageLinks(small: URL(string: "https://akcdn.detik.net.id/visual/2023/08/13/golkar-pan-pkb-dukung-prabowo-di-pilpres-2024-10_169.jpeg?w=360&q=90")!, large: URL(string: "https://akcdn.detik.net.id/visual/2023/08/13/golkar-pan-pkb-dukung-prabowo-di-pilpres-2024-10_169.jpeg?w=360&q=90")!)
+    }
+}
+
+extension NewsItemModel {
+    init(title: String, link: URL, contentSnippet: String, isoDate: Date, image: ImageLinks) {
+        self.title = title
+        self.link = link
+        self.contentSnippet = contentSnippet
+        self.isoDate = isoDate
+        self.image = image
     }
 }
 
